@@ -1,0 +1,58 @@
+﻿@model Customer
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h1>Customer Information</h1>
+            <div>
+                <form asp-action="CustomerDetails">
+                    <div>
+                        <label class="form-label" asp-for="CustomerID"></label>
+                        <input class="form-control mb-2" asp-for="CustomerID" placeholder="ID" />
+                    </div>
+
+                    <div>
+                        <label class="form-label" asp-for="CompanyName"></label>
+                        <input class="form-control mb-2" asp-for="CompanyName" placeholder="Company Name" />
+                    </div>
+
+                    <div>
+                        <label class="form-label" asp-for="Age"></label>
+                        <input class="form-control mb-2" asp-for="Age" placeholder="Age" />
+                        @*@Html.Label("Age:")
+                        @Html.TextBoxFor(x=>x.Age)
+                        @Html.ValidationMessageFor(x=>x.Age,"*")
+*@
+                    </div>
+
+                    <div>
+                        <label class="form-label" asp-for="Email"></label>
+                        <input class="form-control mb-2" asp-for="Email" placeholder="E-Mail" />
+                        @*@Html.Label("Email:")
+                        @Html.TextBoxFor(x=>x.Email)
+                        @Html.ValidationMessageFor(x=>x.Email,"*")*@
+                    </div>
+
+                    <div>
+                        <label class="form-label" asp-for="JoinDate"></label>
+                        <input class="form-control mb-2" asp-for="JoinDate" placeholder="Join Date" />
+                    </div>
+
+                    <div>
+                        <label class="form-label" asp-for="CustomerType"></label>
+                        <select class="dropdown-menu-start ms-3 " asp-for="CustomerType" asp-items="@(Html.GetEnumSelectList<CustomerType>())"> </select>
+                    </div>
+                    <div>
+                        <input class="mt-4 btn-danger p-2" type="submit" value="NewCustomer" />
+                    </div>
+                    <div class="mt-5 text-danger" asp-validation-summary="All"></div>
+
+
+                </form>
+
+            </div>
+        </div>
+        <div class="col-md-2"> @ViewBag.postback</div>
+    </div>
+</div>
