@@ -48,7 +48,7 @@ namespace CustomValid_AspTag_HtmlTagHelper.Controllers
             //Customer sınıfı oluşturunuz
             //customerID,CompanyName,Age,Email,JoinDate,Enum CustomerType=> New=0, Regular ,Elite
             //Required , ERROR MESSAGE
-
+           
             //html.
             return View(customer);
         }
@@ -59,5 +59,10 @@ namespace CustomValid_AspTag_HtmlTagHelper.Controllers
         // hayvanın yaşı max 15.
         // hayvanın beslenme türü (etçil otçul hepçil.)
         // tasarim inputlar hata mesajları.
+
+       
+
+      
+      
     }
 }
